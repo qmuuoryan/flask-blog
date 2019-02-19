@@ -11,12 +11,12 @@
 {% block content%}
 <div class="container-fluid">
     <div class='jumbotron'>
-            <div class="col-sm-2" style="float:right;  margin-top: 5px">
+        <div class="col-sm-2" style="float:right;  margin-top: 5px">
             {{wtf.quick_form(form)}}
         </div>
         <h1 class="title text-center display-4">Blog</h1>
         
-     </div>
+    </div>
    
             <div id="myCarousel" class="carousel slide" data-ride="carousel">
                 <ol class="carousel-indicators">
@@ -56,10 +56,10 @@
     </div>
     {% for post in posts %}
     <div class="post-card mb-5 text-center">
-        <div class="img-container">
-        <img class="text-center img-responsive" src="{{url_for('static', filename=post.image)}}" alt="" height="600px"
-            width="750px">
-        </div>
+
+            <div class="img-container">
+                    <img class="text-center img-responsive" src="{{url_for('static', filename=post.image)}}" alt="" height="600px"
+                        width="750px">
         <h2>{{post.title}}</h2>
         <h3><em>By {{post.user.full_name}} | {{post.time[0:10]}} at {{post.time[11:16]}}</em></h3>
         <div class="content">
@@ -70,6 +70,7 @@
         </div>
     </div>
     {% endfor %}
-    <div class='footer'>copyright 2019</div>
+</div>   
+    
 {% endblock %}
 

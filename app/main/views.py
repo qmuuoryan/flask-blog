@@ -1,13 +1,15 @@
 from . import main
 from flask_login import current_user, login_required
-from .forms import AddPostForm,SubscribeForm,AddComment,EditBio
+from .forms import AddBlogForm,SubscribeForm,AddComment,EditBio
 from ..models import Post,User,Comment,Subscriber
 from flask import redirect,url_for,render_template,flash,request
 from .. import db,photos
 from datetime import datetime
 from app.email import create_mail
+import json
 
 @main.route("/", methods = ["GET","POST"])
+
 def index():
     form = SubscribeForm()
     if form.validate_on_submit():
@@ -23,9 +25,9 @@ def index():
 
 @main.route("/add/post/",methods = ["GET","POST"])
 @login_required
-def add_post():
-    form = AddPostForm()
-    title = "Add Post"
+def add_blog():
+    form =AddBlogForm()
+    title = "Add Blog"
 
 
     if form.validate_on_submit():
@@ -48,7 +50,7 @@ def add_post():
         print(emails)
         return redirect(url_for('main.index'))
 
-    return render_template("add_pitch.html",form = form,title = title)
+    return render_template("add_blog.html",form = form,title = title)
 
 @main.route("/post/<int:id>",methods = ["GET","POST"])
 def post_page(id):
