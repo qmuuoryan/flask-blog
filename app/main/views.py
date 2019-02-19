@@ -1,4 +1,5 @@
 from . import main
+#from ..request import random_quote
 from flask_login import current_user, login_required
 from .forms import AddBlogForm,SubscribeForm,AddComment,EditBio
 from ..models import Post,User,Comment,Subscriber
@@ -6,7 +7,7 @@ from flask import redirect,url_for,render_template,flash,request
 from .. import db,photos
 from datetime import datetime
 from app.email import create_mail
-import json
+
 
 @main.route("/", methods = ["GET","POST"])
 
@@ -22,6 +23,8 @@ def index():
     posts = Post.query.order_by(Post.time.desc())
     title = "Home"
     return render_template("index.html",posts = posts,form = form,title = title)
+
+
 
 @main.route("/add/post/",methods = ["GET","POST"])
 @login_required
@@ -71,7 +74,7 @@ def post_page(id):
 def delete(id):
     post = Post.query.filter_by(id = id).first()
     user_id = post.user_id
-    db.session.delete(post)
+    #db.session.delete(post)
     db.session.commit()
 
     return redirect(url_for('main.profile', id = user_id))
