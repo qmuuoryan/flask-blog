@@ -5,6 +5,7 @@ from .forms import RegistrationForm,LoginForm
 from ..models import User
 from ..email import create_mail
 
+
 @auth.route("/register", methods = ["GET","POST"])
 def register():
     form = RegistrationForm()
