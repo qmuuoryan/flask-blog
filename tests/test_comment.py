@@ -10,7 +10,7 @@ class TestComment(unittest.TestCase):
         """
         This will create a new comment before each test
         """
-        self.new_comment = Comment(title = "Haha")
+        self.new_comment = Comment(title = "papi")
 
     def tearDown(self):
         """
@@ -29,7 +29,7 @@ class TestComment(unittest.TestCase):
         """
         This willl test whether the new_commment is instantiated correctly
         """
-        self.assertTrue(self.new_comment.title == "Haha")
+        self.assertTrue(self.new_comment.title == "papi")
 
     def test_save_comment(self):
         """
