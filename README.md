@@ -7,7 +7,7 @@ Ryan Muuo
  A personal blog website where you can create and share your opinions and other users can read and comment on them.
 
 
-### How to use 
+### BEHAVIOUR DRIVEN DEVELOPMENT
 When the user opens the website, he/she will see the recent blog posts.
 The user can read and comment on different posts.
 The user can also subscribe in order to get alerts when a new post is added.
