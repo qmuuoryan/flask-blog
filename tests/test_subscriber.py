@@ -9,7 +9,7 @@ class TestSubscriber(unittest.TestCase):
         """
         This will create a new sub before each test
         """
-        self.new_sub = Subscriber(email = "g@g.g")
+        self.new_sub = Subscriber(email = "userx@gmail.com")
 
     def tearDown(self):
         """
@@ -27,7 +27,7 @@ class TestSubscriber(unittest.TestCase):
         """
         This will test whether the sub is instantiated correctly
         """
-        self.assertTrue(self.new_sub.email == "g@g.g")
+        self.assertTrue(self.new_sub.email == "userx@gmail.com")
 
     def test_save_sub(self):
         """
