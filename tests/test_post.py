@@ -10,7 +10,7 @@ class TestPost(unittest.TestCase):
         """
         This will create a new post before each test
         """
-        self.new_post = Post(title = "Haha")
+        self.new_post = Post(title = "papi")
 
     def tearDown(self):
         """
@@ -29,7 +29,7 @@ class TestPost(unittest.TestCase):
         """
         This will test whether the post is initialized correctly
         """
-        self.assertTrue(self.new_post.title == "Haha")
+        self.assertTrue(self.new_post.title == "papi")
 
     def test_save_user(self):
         """
@@ -42,7 +42,7 @@ class TestPost(unittest.TestCase):
         """
         This will test whether the post is correctly linked to the user
         """
-        new_user = User(username = "Marvin")
-        test_post = Post(title = "J", user = new_user)
-        self.assertTrue(test_post.user.username == "Marvin")
+        new_user = User(username = "ryan")
+        test_post = Post(title = "r", user = new_user)
+        self.assertTrue(test_post.user.username == "ryan")
     
